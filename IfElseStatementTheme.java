@@ -16,9 +16,9 @@ public class IfElseStatementTheme {
             System.out.println("Поздравляю вы мужчина!");
         }
         if (height < 1.80) {
-            System.out.println("коротышка!");
+            System.out.println("Коротышка!");
         } else {
-            System.out.println("небоскрёб!");
+            System.out.println("Небоскрёб!");
         }
         if(firstLetter == 'M') {
             System.out.println("Тебя зовут Миша?");
@@ -38,7 +38,7 @@ public class IfElseStatementTheme {
                 System.out.println("min = " + b + "\nmax = " + a);
             }
         } else {
-            System.out.println("значения равны");
+            System.out.println("Значения равны");
         }
 
         System.out.println("\n3. Проверка числа.");
@@ -90,10 +90,10 @@ public class IfElseStatementTheme {
         } else if (symbol >= 48 && symbol <= 57) {
             System.out.println("Если число: " + symbol);
         } else {
-            System.out.println("Не буква ни число: " + symbol);
+            System.out.println("Не буква не число: " + symbol);
         }
 
-        System.out.println("\n6.Подсчет суммы вклада и начисленных банком %.");
+        System.out.println("\n6.Сумма вклада и начисленных банком процентов.");
         int deposit =300_000;
         int interest = 0;
         int chargeInterest = 0;
@@ -148,7 +148,7 @@ public class IfElseStatementTheme {
         averagePercent = (historyPercent + programmingPercent) / 2;
         System.out.println(historyScore + " = История\n" + programmingScore +
                 " = Программирование\n" + "Средний бал по предметам = " + averageScore +
-                "\nСредний % по предметам = " + averagePercent);
+                "\nСредний процент по предметам = " + averagePercent);
 
         System.out.println("\n8. Расчет прибыли за год.");
         int rent = 5_000;
