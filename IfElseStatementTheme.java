@@ -1,16 +1,16 @@
 public class IfElseStatementTheme {
     public static void main(String[] args) {
         System.out.println("1. Переврод псевдокласса на язык Java.");
-        int old = 20;
+        int age = 20;
         double height = 1.86;
         char gender = 'm';
         char firstLetter = 'R';
-        if(old > 20) {
+        if(age > 20) {
             System.out.println("Совсем старик!");
         } else {
             System.out.println("Совсем зеленый!");
         }
-        if (gender != (char) 'm') {
+        if (gender != 'm') {
             System.out.println("Поздравляю вы женщина!");
         } else {
             System.out.println("Поздравляю вы мужчина!");
@@ -45,6 +45,7 @@ public class IfElseStatementTheme {
         int num = 4;
         System.out.println("Исходное число " + num);
         if (num == 0) {
+            System.out.println("Число = 0");
         } else if(num % 2 == 0) {
             System.out.println("Число четное!");
         } else {
@@ -54,47 +55,35 @@ public class IfElseStatementTheme {
         System.out.println("\n4. Поиск одинаковых цифр в числах.");
         int num1 = 123;
         int num2 = 223;
-        int handred1 = num1 / 100;
-        int handred2 = num2 / 100;
-        int tens1 = num1 % 100 / 10;
-        int tens2 = num2 % 100 / 10;
-        int ones1 = num1 % 10;
-        int ones2 = num2 % 10;
-        boolean handred = handred1 == handred2;
-        boolean tens = tens1 == tens2;
-        boolean ones = ones1 == ones2;
-        int counter = 0;
-        System.out.println("Исходные числа " + " num1 = " + num1 + " num2 = " + num2);
-        if (handred == true) {
-            counter += 1;
-            System.out.println("Сотни - " + handred1);
-        }
-        if (tens == true) {
-            counter += 1;
-            System.out.println("Десятки - " + tens1);
-        }
-        if (ones == true) {
-            counter += 1;
-            System.out.println("Единицы - " + ones1);
-        }
-        if (counter == 0) {
-            System.out.println("Равных чисел нет!");
+        System.out.println("Исходные числа: " + num1 +  " " + num2);
+        if (num1 / 100 != num2 / 100 && num1 / 10 % 10 != num2 / 10 % 10 && num1 % 10 != num2 % 10){
+            System.out.println("Равных чисел нет.");
+        } else {
+            if (num1 / 100 == num2 / 100) {
+                System.out.println("Сотки " + num1 / 100);
+            }
+            if (num1 / 10 % 10 == num2 / 10 % 10) {
+                System.out.println("Десятки " + num1 /10 % 10);
+            }
+            if (num1 % 10 == num2 % 10) {
+                System.out.println("Единицы " + num1 % 10);
+            }
         }
 
         System.out.println("\n5.Определение символа по его коду");
         char symbol = '\u0057';
-        if (symbol >= 97 && symbol <= 122) {
+        if (symbol >= 'a' && symbol <= 'z') {
             System.out.println("Если маленькая буква: " + symbol);
-        } else if (symbol >= 65 && symbol <= 90) {
+        } else if (symbol >= 'A' && symbol <= 'Z') {
             System.out.println("Если большая буква: " + symbol);
-        } else if (symbol >= 48 && symbol <= 57) {
+        } else if (symbol >= '0' && symbol <= '9') {
             System.out.println("Если число: " + symbol);
         } else {
-            System.out.println("Не буква не число: " + symbol);
+            System.out.println("Ни буква, ни число: " + symbol);
         }
 
         System.out.println("\n6.Сумма вклада и начисленных банком процентов.");
-        int deposit =300_000;
+        int deposit = 300_000;
         int interest = 0;
         int chargeInterest = 0;
         int sum = 0;
