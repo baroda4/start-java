@@ -1,6 +1,6 @@
 public class IfElseStatementTheme {
     public static void main(String[] args) {
-        System.out.println("1. Переврод псевдокласса на язык Java.");
+        System.out.println("1. Перевод псевдокласса на язык Java.");
         int age = 20;
         double height = 1.86;
         char gender = 'm';
