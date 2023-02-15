@@ -4,7 +4,7 @@ public class IfElseStatementTheme {
         int age = 20;
         double height = 1.86;
         char gender = 'm';
-        char firstLetter = 'R';
+        char firstLetterName = "Roma".charAt(0);
         if(age > 20) {
             System.out.println("Совсем старик!");
         } else {
@@ -20,11 +20,11 @@ public class IfElseStatementTheme {
         } else {
             System.out.println("Небоскрёб!");
         }
-        if(firstLetter == 'M') {
+        if(firstLetterName == 'M') {
             System.out.println("Тебя зовут Миша?");
-        } else if (firstLetter == 'I') {
+        } else if (firstLetterName == 'I') {
             System.out.println("Тебя зовут Игорь?");
-        } else if (firstLetter == 'R') {
+        } else if (firstLetterName == 'R') {
             System.out.println("Точно Рома!");
         }
 
@@ -56,18 +56,15 @@ public class IfElseStatementTheme {
         int num1 = 123;
         int num2 = 223;
         System.out.println("Исходные числа: " + num1 +  " " + num2);
-        if (num1 / 100 != num2 / 100 && num1 / 10 % 10 != num2 / 10 % 10 && num1 % 10 != num2 % 10){
+        if (num1 / 100 != num2 / 100 && num1 / 10 % 10 != num2 / 10 % 10 &&
+                num1 % 10 != num2 % 10) {
             System.out.println("Равных чисел нет.");
-        } else {
-            if (num1 / 100 == num2 / 100) {
-                System.out.println("Сотки " + num1 / 100);
-            }
-            if (num1 / 10 % 10 == num2 / 10 % 10) {
-                System.out.println("Десятки " + num1 /10 % 10);
-            }
-            if (num1 % 10 == num2 % 10) {
+        } else if (num1 / 100 == num2 / 100)  {
+            System.out.println("Сотки " + num1 / 100);
+        } else if (num1 / 10 % 10 == num2 / 10 % 10) {
+            System.out.println("Десятки " + num1 /10 % 10);
+        } else if (num1 % 10 == num2 % 10) {
                 System.out.println("Единицы " + num1 % 10);
-            }
         }
 
         System.out.println("\n5.Определение символа по его коду");
@@ -89,52 +86,35 @@ public class IfElseStatementTheme {
         int sum = 0;
         if (deposit < 100_000) {
             interest = 5;
-            chargeInterest = deposit / 100 * interest;
-            sum = deposit + chargeInterest;
-            System.out.println("Сумма вклада = " + deposit + "\nНачисленный процент = " +
-                    chargeInterest + "\nИтоговая сумма = " + sum);
         } else if (deposit <= 300_000) {
             interest = 7;
-            chargeInterest = deposit / 100 * interest;
-            sum = deposit + chargeInterest;
-            System.out.println("Сумма вклада = " + deposit + "\nНачисленный процент = " +
-                    chargeInterest + "\nИтоговая сумма = " + sum);
         } else if (deposit > 300_000) {
             interest = 10;
-            chargeInterest = deposit / 100 * interest;
-            sum = deposit + chargeInterest;
-            System.out.println("Сумма вклада = " + deposit + "\nНачисленный процент = " +
-                    chargeInterest + "\nИтоговая сумма = " + sum);
         }
+        System.out.println("Сумма вклада = " + deposit + "\nНачисленный процент = " +
+                    chargeInterest + "\nИтоговая сумма = " + sum);
 
         System.out.println("\n7. Определение оценки по предметам.");
         int historyPercent = 59;
         int programmingPercent = 91;
-        int historyScore = 0;
-        int programmingScore = 0;
+        int historyScore = 2;
+        int programmingScore = 2;
         int averageScore = (historyScore + programmingScore) / 2;
         int averagePercent = (historyPercent + programmingPercent) / 2;
-        if (historyPercent <= 60) {
-            historyScore = 2;
-        } else if (historyPercent <= 73) {
+        if (historyPercent <= 73) {
             historyScore = 3;
         } else if (historyPercent <= 91) {
             historyScore = 4;
         } else {
             historyScore = 5;
         }
-        if (programmingPercent <= 60) {
-            programmingScore = 2;
-        } else if (programmingPercent <= 73) {
+        if (programmingPercent <= 73) {
             programmingScore = 3;
         } else if (programmingPercent <= 91) {
             programmingScore = 4;
         } else {
             programmingScore = 5;
         }
-
-        averageScore = (historyScore + programmingScore) / 2;
-        averagePercent = (historyPercent + programmingPercent) / 2;
         System.out.println(historyScore + " = История\n" + programmingScore +
                 " = Программирование\n" + "Средний бал по предметам = " + averageScore +
                 "\nСредний процент по предметам = " + averagePercent);
@@ -143,7 +123,7 @@ public class IfElseStatementTheme {
         int rent = 5_000;
         int sale = 13_000;
         int costPrice = 9_000;
-        int profit = sale * 12 - rent * 12 - costPrice * 12;
+        int profit = (sale - rent - costPrice) * 12;
         if (profit > 0) {
             System.out.println("Прибыль за год = +" + profit);
         } else {
