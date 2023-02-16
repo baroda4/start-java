@@ -132,7 +132,10 @@ public class IfElseStatementTheme {
 
         System.out.println("\n9. Подсчет количество банкнот.");
         int sumBanknoteAtm = 65;
-        int sumCashAtm = 10 * 100 + 5 * 10 + 50 * 1;
+        int hundredsAtm = 10;
+        int tensAtm = 5;
+        int onesAtm = 50;
+        int sumCashAtm = hundredsAtm * 100 + tensAtm * 10 + onesAtm * 1;
         int sumCashDrop = 567;
         int banknoteDropHundred = sumCashDrop / 100;
         int banknoteDropTens = sumCashDrop % 100 / 10;
@@ -144,30 +147,30 @@ public class IfElseStatementTheme {
         } else if (sumBanknoteDrop > sumBanknoteAtm) {
             System.out.print("Извините в банкомате нет банкнот");
         } else {
-            if (banknoteDropHundred <= 10) {
+            System.out.println("Сумма к выдаче = " + sumCashDrop);
+            if (banknoteDropHundred <= hundredsAtm) {
                 count += banknoteDropHundred;
                 System.out.print("Сотни = " + banknoteDropHundred);
             } else {
-                banknoteDropTens = (banknoteDropHundred - 10) * 10 + banknoteDropTens;
-                System.out.print("Сотни = 10");
-                count += 10;
+                banknoteDropTens = (banknoteDropHundred - hundredsAtm) * 10 + banknoteDropTens;
+                System.out.print("Сотни = " + hundredsAtm);
+                count += hundredsAtm;
             }
-            if (banknoteDropTens <= 5) {
+            if (banknoteDropTens <= tensAtm) {
                 count += banknoteDropTens;
                 System.out.print(" Десятки = " + banknoteDropTens);
             } else {
-                banknoteDropOnes = (banknoteDropTens - 5) * 10 + banknoteDropOnes;
-                System.out.print(" Десятки = 5");
-                count += 5;
+                banknoteDropOnes = (banknoteDropTens - tensAtm) * 10 + banknoteDropOnes;
+                System.out.print(" Десятки = " + tensAtm);
+                count += tensAtm;
             }
-            if (banknoteDropOnes <= 50) {
+            if (banknoteDropOnes <= onesAtm) {
                 count += banknoteDropOnes;
                 System.out.print(" Единицы = " + banknoteDropOnes);
             } else {
                 System.out.print("Извините нет банкнот");
             }
-                System.out.println("\nВсего банкнот: " + count + "\nСумма к выдаче = " +
-                        sumCashDrop);
+                System.out.println("\nВсего банкнот: " + count);
         }
     }
 }
