@@ -144,9 +144,7 @@ public class IfElseStatementTheme {
         int count = 0;
         if (sumCashDrop > sumCashAtm) {
             System.out.print("Извините в банкомате нет столько наличности");
-        } else if (sumBanknoteDrop > sumBanknoteAtm) {
-            System.out.print("Извините в банкомате нет банкнот");
-        } else {
+        }  else {
             System.out.println("Сумма к выдаче = " + sumCashDrop);
             if (banknoteDropHundred <= hundredsAtm) {
                 count += banknoteDropHundred;
@@ -167,8 +165,8 @@ public class IfElseStatementTheme {
             if (banknoteDropOnes <= onesAtm) {
                 count += banknoteDropOnes;
                 System.out.print(" Единицы = " + banknoteDropOnes);
-            } else {
-                System.out.print("Извините нет банкнот");
+            } else if (sumBanknoteDrop > sumBanknoteAtm) {
+                System.out.print("Извините в банкомате нет банкнот");
             }
                 System.out.println("\nВсего банкнот: " + count);
         }
