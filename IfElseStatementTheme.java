@@ -60,27 +60,31 @@ public class IfElseStatementTheme {
 
         System.out.println("\n4. Поиск одинаковых цифр в числах.");
         int num1 = 123;
-        int num2 = 223;
+        int num2 = 133;
         System.out.println("Исходные числа: " + num1 +  " " + num2);
-        if (num1 / 100 != num2 / 100 && num1 / 10 % 10 != num2 / 10 % 10 &&
-                num1 % 10 != num2 % 10) {
-            System.out.println("Равных чисел нет.");
-        } else if (num1 / 100 == num2 / 100)  {
-            System.out.println("Сотки " + num1 / 100);
-        } else if (num1 / 10 % 10 == num2 / 10 % 10) {
-            System.out.println("Десятки " + num1 /10 % 10);
-        } else if (num1 % 10 == num2 % 10) {
+        if (num1 != num2) {
+            if (num1 / 100 == num2 / 100) {
+                System.out.println("Сотки " + num1 / 100);
+            } else if (num1 / 10 % 10 == num2 / 10 % 10) {
+                System.out.println("Десятки " + num1 / 10 % 10);
+            } else if (num1 % 10 == num2 % 10) {
                 System.out.println("Единицы " + num1 % 10);
+            } else {
+                System.out.println("Равных чисел нет");
+            }
+        } else {
+            System.out.println("Сотки " + num1 / 100 + "\nДесятки " + num1 / 10 % 10 + "\nЕдиницы " +
+                    num1 % 10);
         }
 
         System.out.println("\n5.Определение символа по его коду");
         char symbol = '\u0057';
         if (symbol >= 'a' && symbol <= 'z') {
-            System.out.println("Если маленькая буква: " + symbol);
+            System.out.println("маленькая буква: " + symbol);
         } else if (symbol >= 'A' && symbol <= 'Z') {
-            System.out.println("Если большая буква: " + symbol);
+            System.out.println("большая буква: " + symbol);
         } else if (symbol >= '0' && symbol <= '9') {
-            System.out.println("Если число: " + symbol);
+            System.out.println("число: " + symbol);
         } else {
             System.out.println("Ни буква, ни число: " + symbol);
         }
@@ -92,20 +96,26 @@ public class IfElseStatementTheme {
         int sum = 0;
         if (deposit < 100_000) {
             interest = 5;
+            chargeInterest = deposit * interest / 100;
+            sum = deposit + chargeInterest;
         } else if (deposit <= 300_000) {
             interest = 7;
+            chargeInterest = deposit * interest / 100;
+            sum = deposit + chargeInterest;
         } else if (deposit > 300_000) {
             interest = 10;
+            chargeInterest = deposit * interest / 100;
+            sum = deposit + chargeInterest;
         }
         System.out.println("Сумма вклада = " + deposit + "\nНачисленный процент = " +
                     chargeInterest + "\nИтоговая сумма = " + sum);
 
         System.out.println("\n7. Определение оценки по предметам.");
-        int historyPercent = 59;
-        int programmingPercent = 91;
         int historyScore = 2;
         int programmingScore = 2;
         int averageScore = (historyScore + programmingScore) / 2;
+        int historyPercent = 59;
+        int programmingPercent = 91;
         int averagePercent = (historyPercent + programmingPercent) / 2;
         if (historyPercent <= 73) {
             historyScore = 3;
