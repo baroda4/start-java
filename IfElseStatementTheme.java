@@ -31,26 +31,32 @@ public class IfElseStatementTheme {
         System.out.println("\n2. Поиск min и max числа.");
         int a = 5;
         int b = 145;
-        if (a != b) {
-            if (a < b) {
-                System.out.println("min = " + a + "\nmax = " + b);
-            } else {
-                System.out.println("min = " + b + "\nmax = " + a);
-            }
-        } else {
+        if (a == b) {
             System.out.println("Значения равны");
+        } else if (a > b) {
+            System.out.println("max: " + a + "\nmin: " + b);
+        } else {
+            System.out.println("max: " + b + "\nmin: " + a);
         }
 
         System.out.println("\n3. Проверка числа.");
         int num = 4;
         System.out.println("Исходное число " + num);
         if (num == 0) {
-            System.out.println("Число = 0");
-        } else if(num % 2 == 0) {
-            System.out.println("Число четное!");
+            System.out.println("Число равно 0");
         } else {
-            System.out.println("Число нечетное!");
+            if(num % 2 == 0) {
+                System.out.println("Число четное");
+            } else {
+                System.out.println("Число нечетное");
+            }
+            if (num > 0) {
+                System.out.println("Число положительное");
+            } else {
+                System.out.println("Число отрицательное");
+            }
         }
+
 
         System.out.println("\n4. Поиск одинаковых цифр в числах.");
         int num1 = 123;
