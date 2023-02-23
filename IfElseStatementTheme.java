@@ -59,32 +59,28 @@ public class IfElseStatementTheme {
 
         System.out.println("\n4. Поиск одинаковых цифр в числах.");
         int num1 = 123;
-        int num2 = 444;
+        int num2 = 321;
         System.out.println("Исходные числа: " + num1 +  " " + num2);
         int hundredsNum1 = num1 / 100;
         int hundredsNum2 = num2 / 100;
-        byte notIdenticalNum = 3;
         if(hundredsNum2 == hundredsNum1) {
             System.out.println("Сотни " + hundredsNum1);
-            notIdenticalNum -= 1;
         }
         int tensNum1 = num1 / 10 % 10;
         int tensNum2 = num2 / 10 % 10;
         if(tensNum2 == tensNum1) {
             System.out.println("Десятки " + tensNum2);
-            notIdenticalNum -= 1;
         }
         int onesNum1 = num1 % 10;
         int onesNum2 = num2 % 10;
         if(onesNum2 == onesNum1) {
             System.out.println("Единицы " + onesNum2);
-            notIdenticalNum -= 1;
         }
-        if(notIdenticalNum == 3) {
+        if(hundredsNum1 != hundredsNum2 && tensNum1 != tensNum2 && onesNum1 != onesNum2) {
             System.out.println("Нет одинаковых разрядов");
         }
 
-                System.out.println("\n5.Определение символа по его коду");
+        System.out.println("\n5.Определение символа по его коду");
         char symbol = '\u0057';
         if (symbol >= 'a' && symbol <= 'z') {
             System.out.println("маленькая буква: " + symbol);
@@ -98,10 +94,8 @@ public class IfElseStatementTheme {
 
         System.out.println("\n6.Сумма вклада и начисленных банком процентов.");
         int deposit = 300_000;
-        int interest = 0;
-        if (deposit < 100_000) {
-            interest = 5;
-        } else if (deposit <= 300_000) {
+        int interest = 5;
+        if (deposit > 100_000 && deposit <= 300_000) {
             interest = 7;
         } else if (deposit > 300_000) {
             interest = 10;
@@ -155,7 +149,7 @@ public class IfElseStatementTheme {
         int sumCashAtm = hundredsAtm * 100 + tensAtm * 10 + onesAtm * 1;
         int sumCashDrop = 567;
         int banknoteDropHundred = sumCashDrop / 100;
-        int banknoteDropTens = sumCashDrop % 100 / 10;
+        int banknoteDropTens = sumCashDrop / 10 % 10;
         int banknoteDropOnes = sumCashDrop % 10;
         int sumBanknoteDrop = banknoteDropOnes + banknoteDropTens + banknoteDropHundred;
         int count = 0;
@@ -163,29 +157,29 @@ public class IfElseStatementTheme {
             System.out.println("Сумма к выдаче = " + sumCashDrop);
             if (banknoteDropHundred <= hundredsAtm) {
                 count += banknoteDropHundred;
-                System.out.print("Сотни = " + banknoteDropHundred);
             } else {
                 banknoteDropTens = (banknoteDropHundred - hundredsAtm) * 10 + banknoteDropTens;
-                System.out.print("Сотни = " + hundredsAtm);
                 count += hundredsAtm;
             }
             if (banknoteDropTens <= tensAtm) {
                 count += banknoteDropTens;
-                System.out.print(" Десятки = " + banknoteDropTens);
             } else {
                 banknoteDropOnes = (banknoteDropTens - tensAtm) * 10 + banknoteDropOnes;
-                System.out.print(" Десятки = " + tensAtm);
+                banknoteDropTens = tensAtm;
                 count += tensAtm;
             }
             if (banknoteDropOnes <= onesAtm) {
                 count += banknoteDropOnes;
-                System.out.print(" Единицы = " + banknoteDropOnes);
+
             } else if (sumBanknoteDrop > sumBanknoteAtm) {
-                System.out.print("Извините в банкомате нет столько наличности");
+                System.out.print("\nИзвините в банкомате нет столько наличности");
             }
-            System.out.println("\nВсего банкнот: " + count);
+
         } else {
             System.out.print("Извините в банкомате нет столько наличности");
         }
+        System.out.print("Сотни = " + banknoteDropHundred + "\nДесятки = " + banknoteDropTens +
+                "\nЕдиницы = " + banknoteDropOnes);
+        System.out.println("\nВсего банкнот: " + count);
     }
 }
