@@ -59,15 +59,82 @@ public class CycleTheme {
         } while (i <= 3);
         System.out.println("\n3.2 Сумма чисел = " + sumNum);
 
+        System.out.println("\n4. Вывод чисел в консоль в несколько строк");
+        
+
         System.out.println("\n5. Проверка количества двоек на четность/нечетность");
         int count = 0;
         num = 3242592;
-        int numOut = 0;
+        int numCount = 0;
+        int x = num;
         for(i = 0; i <= 6; i++) {
-            if(num % 10 == 2) {
+            numCount = x % 10;
+            x /= 10;
+            if(numCount == 2) {
                 count++;
             }
-        System.out.println(count);
         }
+        if (count % 2 == 0) {
+            System.out.println("Число " + num + " содержит " + numCount + " четное количество двоек");
+        } else {
+            System.out.println("Число " + num + " содержит " + numCount +
+                    " нечетное количество двоек");
+        }
+
+        System.out.println("\n6. Отображение фигур консоли.");
+        char asterix = '*';
+        for(i = 0; i <= 4; i++) {
+            for(int j = 0; j <= 8; j++) {
+                System.out.print(asterix);
+            }
+            System.out.println(asterix);
+        }
+
+        char octothorpe = '#';
+        i = 0;
+        int j = 5;
+        while (i <= 4) {
+            while (j != 0) {
+                System.out.print(octothorpe);
+                j--;
+            }
+            System.out.println();
+            i++;
+            j = 5 - i;
+        }
+
+        i = 0;
+        j = 5;
+        char dollarSign = '$';
+        do {
+            System.out.println(dollarSign);
+            do {
+                System.out.print(dollarSign);
+                j--;
+            } while (j <= 3 && j > 2);
+            i++;
+        } while (i <= 3);
+
+        System.out.println("\n\n9. Определение является ли число счастливым");
+        num = 123590;
+        int sumNumHalf1 = 0;
+        int sumNumHalf2 = 0;
+        for(i = 6; i > 3; i--) {
+            sumNumHalf2 = sumNumHalf2 + num % 10;
+            num = num / 10;
+        }
+        for(i = 2; i >= 0; i--) {
+            sumNumHalf1 = sumNumHalf1 + num % 10;
+            num = num / 10;
+        }
+        if(sumNumHalf1 == sumNumHalf2) {
+            System.out.println("Сумма цифр abc = " + sumNumHalf1 + ", Сумма цифр def = " +
+            sumNumHalf2 + " \nЧисло является счастливым");
+        } else {
+            System.out.println("Сумма цифр abc = " + sumNumHalf1 + ", Сумма цифр def = " +
+            sumNumHalf2 + " \nЧисло не является счастливым");
+        }
+
+
     }
 }
