@@ -60,9 +60,18 @@ public class CycleTheme {
         System.out.println("\n3.2 Сумма чисел = " + sumNum);
 
         System.out.println("\n4. Вывод чисел в консоль в несколько строк");
-        
+        int counter = 0;
+        for (i = 0; i < 24; i++) {
+            if (i % 2 == 0) {
+                counter++;
+                System.out.printf("%3d", i);
+                if (counter % 5 == 0) {
+                    System.out.printf("%n");
+                }
+            }
+        }
 
-        System.out.println("\n5. Проверка количества двоек на четность/нечетность");
+        System.out.println("\n\n5. Проверка количества двоек на четность/нечетность");
         int count = 0;
         num = 3242592;
         int numCount = 0;
