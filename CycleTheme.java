@@ -60,14 +60,21 @@ public class CycleTheme {
         System.out.println("\n3.2 Сумма чисел = " + sumNum);
 
         System.out.println("\n4. Вывод чисел в консоль в несколько строк");
-        int counter = 0;
-        for (i = 0; i < 24; i++) {
-            if (i % 2 == 0) {
-                counter++;
+        num = 24;
+        int counter = 1;
+        for (i = 1; i < num; i += 2) {
+            if (counter % 5 != 0) {
                 System.out.printf("%3d", i);
-                if (counter % 5 == 0) {
-                    System.out.printf("%n");
-                }
+            } else {
+                System.out.printf("%3d%n", i);
+            }
+        counter++;
+        }
+        int round = 0;
+        if (num / 2 % 5 != 0) {
+            round = 5 - (num / 2 % 5);
+            for (i = round; i > 0; i--) {
+                System.out.printf("%3d", 0);
             }
         }
 
@@ -84,7 +91,8 @@ public class CycleTheme {
             }
         }
         if (count % 2 == 0) {
-            System.out.println("Число " + num + " содержит " + numCount + " четное количество двоек");
+            System.out.println("Число " + num + " содержит " + numCount +
+                    " четное количество двоек");
         } else {
             System.out.println("Число " + num + " содержит " + numCount +
                     " нечетное количество двоек");
@@ -123,6 +131,17 @@ public class CycleTheme {
             } while (j <= 3 && j > 2);
             i++;
         } while (i <= 3);
+
+        System.out.println("\n8. Проверка является ли число палиндромом");
+        num = 1234321;
+        int degree =0;
+        int numReverse = num;
+        for(i = 0; num > 0; i++) {
+            num = num / 10;
+            degree++;
+        }
+        System.out.println(degree);
+
 
         System.out.println("\n\n9. Определение является ли число счастливым");
         num = 123590;
