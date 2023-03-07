@@ -133,12 +133,10 @@ public class CycleTheme {
         } while (i <= 3);
 
         System.out.println("\n8. Проверка является ли число палиндромом");
-        num = 1234321;
-        int degree =0;
-        int numReverse = num;
-        for(i = 0; num > 0; i++) {
-            num = num / 10;
-            degree++;
+        num = 1234;
+        int degree = 0;
+        for(i = 0; i <= num; i++) {
+            degree = num / 10;
         }
         System.out.println(degree);
 
@@ -162,7 +160,5 @@ public class CycleTheme {
             System.out.println("Сумма цифр abc = " + sumNumHalf1 + ", Сумма цифр def = " +
             sumNumHalf2 + " \nЧисло не является счастливым");
         }
-
-
     }
 }
